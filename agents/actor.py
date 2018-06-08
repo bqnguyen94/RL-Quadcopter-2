@@ -33,14 +33,17 @@ class Actor:
         net = layers.Dense(units=128, activation='relu', kernel_regularizer=regularizers.l2(0.01))(states)
         net = layers.BatchNormalization()(net)
         net = layers.Activation('relu')(net)
+        net = layers.Dropout(0.4)(net)
 
         net = layers.Dense(units=64, activation='relu', kernel_regularizer=regularizers.l2(0.01))(net)
         net = layers.BatchNormalization()(net)
         net = layers.Activation('relu')(net)
+        net = layers.Dropout(0.3)(net)
 
         net = layers.Dense(units=32, activation='relu', kernel_regularizer=regularizers.l2(0.01))(net)
         net = layers.BatchNormalization()(net)
         net = layers.Activation('relu')(net)
+        net = layers.Dropout(0.2)(net)
 
         # Try different layer sizes, activations, add batch normalization, regularizers, etc.
 
