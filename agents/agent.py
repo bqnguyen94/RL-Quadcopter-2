@@ -1,11 +1,11 @@
 import numpy as np
 from task import Task
-from replay_buffer import ReplayBuffer
-from ounoise import OUNoise
-from actor import Actor
-from critic import Critic
+from agents.replay_buffer import ReplayBuffer
+from agents.ounoise import OUNoise
+from agents.actor import Actor
+from agents.critic import Critic
 
-class DDPG():
+class Agent():
     """Reinforcement Learning agent that learns using DDPG."""
     def __init__(self, task):
         self.task = task
